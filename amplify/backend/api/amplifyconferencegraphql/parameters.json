@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "amplifyconferencegraphql",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authawsamplifyconferenceee829563",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

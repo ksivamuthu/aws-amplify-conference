@@ -1,0 +1,12 @@
+projects:
+  amplifyconferencegraphql:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - react-web-app/src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql

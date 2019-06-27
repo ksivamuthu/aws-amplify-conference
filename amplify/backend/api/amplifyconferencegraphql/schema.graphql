@@ -1,0 +1,62 @@
+type Conference @model {
+  id: ID!
+  title: String!
+  year: Int!
+  websiteUrl: String!
+  location: String!
+  contact: String!
+  sessions: [Session]! @connection(name: "ConferenceSessions")
+}
+
+type Session @model @searchable {
+  id: ID!
+  title: String!
+  abstract: String!
+  level: Level!
+  category: Category!
+  keywords: [String]!
+  favorites: [UserSessionVote]! @connection(name: "UserSessionVotes")
+  conference: Conference! @connection(name: "ConferenceSessions")
+  speaker: Speaker! @connection(name: "SessionSpeakers")
+}
+
+type Speaker @model {
+  id: ID!
+  name: String!
+  bio: String!
+  facts: String @function(name: "speakerfacts-${env}")
+  jobtitle: String!
+  phonenumber: String!
+  companyname: String!
+  companywebsite: String!
+  blog: String!
+  website: String!
+  twitter: String!
+  facebook: String!
+  linkedin: String!
+  sessions: [Session]! @connection(name: "SessionSpeakers")
+}
+
+type UserSessionVote @model {
+  id: ID!
+  userId: String!
+  session: Session! @connection(name: "UserSessionVotes")
+}
+
+enum Level {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum Category {
+  GeneralDiscussion
+  ClientDevelopment
+  WebDevelopment
+  DatabaseDevelopment
+  CloudDevelopment
+  Design
+  ProfessionalDevelopment
+  CareerAdvancement
+  ITTopics
+}
