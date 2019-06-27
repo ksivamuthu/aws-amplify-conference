@@ -5,7 +5,7 @@ This sample reference application shows how to use GraphQL to build an applicati
 ---
 This tweet is my reaction when I started exploring AWS AppSync. I'm impressed on how AWS Amplify & Appsync evolved over an year. Integration with backend and client libraries are awesome.
 
-![](docs/twitter_1021208992377425920.png)
+<a href="https://twitter.com/ksivamuthu/status/1021208992377425920" ><img src="docs/twitter_1021208992377425920.png"><img></a>
 
 ## Slides
 
