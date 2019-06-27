@@ -2,6 +2,11 @@
 
 This sample reference application shows how to use GraphQL to build an application that a user can login to the system, see the confernece, sessions and speaker details. The sample is written in React and uses AWS AppSync, Amazon Cognito, Amazon DynamoDB, Amazon PinPoint and Amazon S3 as well as the Amplify CLI.
 
+---
+This tweet is my reaction when I started exploring AWS AppSync. I'm impressed on how AWS Amplify & Appsync evolved over an year. Integration with backend and client libraries are awesome.
+
+![](docs/twitter_1021208992377425920.png)
+
 ## Slides
 
 Slides are here - https://slides.com/sivamuthukumar/building-serverless-graphql-using-aws-amplify/fullscreen
