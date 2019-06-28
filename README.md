@@ -1,5 +1,7 @@
 # AWS Amplify & AppSync Conference - Reference App
 
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/ksivamuthu/aws-amplify-conference)
+
 This sample reference application shows how to use GraphQL to build an application that a user can login to the system, see the conference, sessions and speaker details. The sample is written in React and uses AWS AppSync, Amazon Cognito, Amazon DynamoDB, Amazon PinPoint and Amazon S3 as well as the Amplify CLI.
 
 This tweet is my reaction when I started exploring AWS AppSync. I'm impressed on how AWS Amplify & Appsync evolved over an year. Integration with backend and client libraries are awesome.
