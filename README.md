@@ -1,11 +1,24 @@
-# AWS AppSync Conference Sample
+# AWS Amplify & AppSync Conference - Reference App
 
-This sample reference application shows how to use GraphQL to build an application that a user can login to the system, see the confernece, sessions and speaker details. The sample is written in React and uses AWS AppSync, Amazon Cognito, Amazon DynamoDB, Amazon PinPoint and Amazon S3 as well as the Amplify CLI.
+This sample reference application shows how to use GraphQL to build an application that a user can login to the system, see the conference, sessions and speaker details. The sample is written in React and uses AWS AppSync, Amazon Cognito, Amazon DynamoDB, Amazon PinPoint and Amazon S3 as well as the Amplify CLI.
 
----
 This tweet is my reaction when I started exploring AWS AppSync. I'm impressed on how AWS Amplify & Appsync evolved over an year. Integration with backend and client libraries are awesome.
 
 <a href="https://twitter.com/ksivamuthu/status/1021208992377425920" ><img src="docs/twitter_1021208992377425920.png"><img></a>
+
+
+## Table of Contents <!-- omit in toc -->
+- [AWS Amplify & AppSync Conference - Reference App](#AWS-Amplify--AppSync-Conference---Reference-App)
+  - [Slides](#Slides)
+  - [Topics](#Topics)
+  - [Demo Features](#Demo-Features)
+  - [Prerequisites](#Prerequisites)
+  - [Getting Started](#Getting-Started)
+  - [GraphQL Schema & Transforms](#GraphQL-Schema--Transforms)
+  - [How to run React Web App Project?](#How-to-run-React-Web-App-Project)
+  - [Contributing](#Contributing)
+  - [License](#License)
+
 
 ## Slides
 
@@ -47,46 +60,52 @@ Slides are here - https://slides.com/sivamuthukumar/building-serverless-graphql-
 1. Clone this repo locally.
 
 ```
-git clone https://github.com/ksivamuthu/aws-amplify-conference.git
+$ git clone https://github.com/ksivamuthu/aws-amplify-conference.git
 cd aws-amplify-conference
 ```
 
 2. Initialize the amplify project.
 
 ```
-amplify init
+$ amplify init
 ```
 
-3. Configure an Amazon Cognito User Pool to manage user credentials.
+3. Push the amplify resources into cloud
 
-```
-amplify add auth
+```bash
+$ amplify push
+
+Current Environment: dev
+
+| Category  | Resource name                | Operation | Provider plugin   |
+| --------- | ---------------------------- | --------- | ----------------- |
+| Auth      | awsamplifyconferenceee829563 | Create    | awscloudformation |
+| Hosting   | S3AndCloudFront              | Create    | awscloudformation |
+| Api       | amplifyconferencegraphql     | Create    | awscloudformation |
+| Analytics | amplifyconferenceanalytics   | Create    | awscloudformation |
+| Storage   | amplifyconferences3          | Create    | awscloudformation |
+| Function  | speakerfacts                 | Create    | awscloudformation |
+? Are you sure you want to continue? Yes
 ```
 
-4. Configure an Amazon S3 bucket to store files.
+This command will create the all backend resources required for projects.
 
-```
-amplify add storage
-```
+| Category  | Resource name                | Operation | Provider plugin   |
+| --------- | ---------------------------- | --------- | ----------------- |
+| Auth      | awsamplifyconferenceee829563 | Create    | awscloudformation |
+| Hosting   | S3AndCloudFront              | Create    | awscloudformation |
+| Api       | amplifyconferencegraphql     | Create    | awscloudformation |
+| Analytics | amplifyconferenceanalytics   | Create    | awscloudformation |
+| Storage   | amplifyconferences3          | Create    | awscloudformation |
+| Function  | speakerfacts                 | Create    | awscloudformation |
 
-5. Configure an Amazon Pinpoint to track events
+## GraphQL Schema & Transforms
 
-```
-amplify add analytics
-```
-
-6. Configure an AWS AppSync API to interact with your backend data sources such as Amazon DynamoDB, Amazon Elasticsearch, AWS Lambda.
-
-```
-amplify add api
-
-# When prompted for a schema.graphql provide the value "schema.graphql"
-# to point to the file checked in to the root of the project directory.
-```
+The GraphQL Schema file is located at - [amplify/backend/api/amplifyconferencegraphql/schema.graphql](amplify/backend/api/amplifyconferencegraphql/schema.graphql)
 
 Read about [GraphQL Transforms](https://aws-amplify.github.io/docs/cli/graphql) on @model, @searchable, @function directives
 
-```
+```graphql
 type Conference @model {
   id: ID!
   title: String!
@@ -151,32 +170,17 @@ enum Category {
 }
 ```
 
-7. Deploy your project.
+## How to run React Web App Project?
 
-```
-amplify push
+1. Install client dependencies.
+  ```
+  $ npm install
+  ```
 
-# When asked if you would like to generate client code, you can
-# say no since we are using plain JavaScript.
-```
-
-8. Install client dependencies.
-
-```
-npm install
-
-# or
-yarn
-```
-
-9. Run the react application
-
-```
-npm run start
-
-# or
-yarn start
-```
+2. Run the react application
+  ```
+  $ npm run start
+  ```
 
 The sample uses [AWS Amplify](https://github.com/aws/aws-amplify) to perform the Sign-Up and Sign-In flows with a Higher Order Component and its GraphQL calls.
 

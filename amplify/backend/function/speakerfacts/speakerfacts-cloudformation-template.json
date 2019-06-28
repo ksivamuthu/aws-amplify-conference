@@ -62,8 +62,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "awsamplifyconference-dev-20190626201834-deployment",
-					"S3Key": "amplify-builds/speakerfacts-1561642885-latest-build.zip"
+					"S3Bucket": "awsamplifyconference-dev-20190627213633-deployment",
+					"S3Key": "amplify-builds/speakerfacts-1561685842-latest-build.zip"
 				}
 			}
 		},
