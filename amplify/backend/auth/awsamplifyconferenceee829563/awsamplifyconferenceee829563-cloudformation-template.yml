@@ -176,12 +176,6 @@ Resources:
           Name: email
           Required: true
           Mutable: true
-        
-        -
-          Name: name
-          Required: true
-          Mutable: true
-        
       
       
       AutoVerifiedAttributes: !Ref autoVerifiedAttributes
