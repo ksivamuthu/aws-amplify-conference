@@ -172,14 +172,24 @@ enum Category {
 
 ## How to run React Web App Project?
 
-1. Install client dependencies.
+1. Navigate into react-web-app project
+  ```
+  cd react-web-app
+  ```
+
+2. Install client dependencies.
   ```
   $ npm install
   ```
 
-2. Run the react application
+3. Run the react application
   ```
   $ npm run start
+  ```
+
+4. To deploy into S3 hosting
+  ```
+  $ amplify publish
   ```
 
 The sample uses [AWS Amplify](https://github.com/aws/aws-amplify) to perform the Sign-Up and Sign-In flows with a Higher Order Component and its GraphQL calls.
